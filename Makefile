@@ -1,7 +1,10 @@
-.PHONY: dev setup
+.PHONY: dev dependencies client
 
-setup:
+dependencies:
 	@dep ensure
 
 dev:
 	@realize start
+
+client:
+	@go run cmd/hex-game-client/main.go

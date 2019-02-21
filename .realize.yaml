@@ -5,7 +5,8 @@ settings:
 schema:
 - name: hex-game-server
   path: .
-  commands: {}
+  commands: 
+    run: true
   watcher:
     extensions:
     - go
