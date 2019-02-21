@@ -1,4 +1,4 @@
-.PHONY dev setup
+.PHONY: dev setup
 
 setup:
 	@dep ensure
