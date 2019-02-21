@@ -24,3 +24,4 @@ Principal specs definitions on this project.
 * [Golang Standards Project Layout](https://github.com/golang-standards/project-layout) will used as folders organizations
 * [Dep](https://golang.github.io/dep) will be used as package manager instead of native goland package manger
 * [Gorilla WebSocket](https://github.com/gorilla/websocket) will be used as socket framework
+* [Realize Task Runner](https://github.com/oxequa/realize) will be used as task runner
