@@ -64,4 +64,4 @@ Will make an output like this it the server is on too:
 
 ## DevOps
 
-ToDO
+ToDO... Travis comming soon.
