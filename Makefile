@@ -1,10 +1,10 @@
-.PHONY: dev dependencies client
+.PHONY: dev packages client echo
 
-dependencies:
+packages:
 	@dep ensure
 
 dev:
-	@realize start
+	@realize start --name="hex-game-server"
 
-client:
-	@go run cmd/hex-game-client/main.go
+echo:
+	@realize start --name="hex-game-client"
