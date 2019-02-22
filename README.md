@@ -18,6 +18,16 @@ How start dev on this project
 * [Dep](https://golang.github.io/dep)
 * [Realize Task Runner](https://github.com/oxequa/realize)
 
+### Cloning project
+
+Golang is very strict about where the project must be, please fallow the commands bellow for cloning without problems.
+
+```
+$ mkdir -p $GOPATH/src/github.com/alanleite
+$ cd $GOPATH/src/github.com/alanleite
+$ git clone git@github.com:alanleite/hex-game-server.git
+```
+
 ### Installing
 
 `$ make packages`
@@ -28,9 +38,11 @@ Run the commands bellow
 
 #### Server
 
-This command will run the server on localhost:8080
+This command will run the server on `ws://localhost:880`.
 
 `$ make dev`
+
+It have a watcher for code changes, so realex just code and have fun, on every change it will re run go run.
 
 #### Test Client
 
@@ -41,7 +53,7 @@ This command will connect at socket server and start to send and receive test co
 Will make an output like this it the server is on too:
 
 ```
-2:47:52][HEX-GAME-CLIENT] : Watching 4 file/s 9 folder/s
+[22:47:52][HEX-GAME-CLIENT] : Watching 4 file/s 9 folder/s
 [22:47:52][HEX-GAME-CLIENT] : Install started
 [22:47:52][HEX-GAME-CLIENT] : Install completed in 0.087 s
 [22:47:52][HEX-GAME-CLIENT] : Running..
