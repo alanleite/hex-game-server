@@ -6,20 +6,29 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/alanleite/hex-game-server/internal/pkg/controllers/echo"
+	"github.com/alanleite/hex-game-server/internal/pkg/routes"
+	"github.com/rs/cors"
 )
 
+//Start socket server
 func Start() {
 
-	var addr = flag.String("addr", os.Getenv("URL"), "http service address")
+	flag.Parse()    // Don't know what it does... I know, shame on me...
+	log.SetFlags(0) // It ether
 
-	flag.Parse()
-	log.SetFlags(0)
-	routes()
-	log.Fatal(http.ListenAndServe(*addr, nil))
+	// Cors Configuration
+	c := cors.New(cors.Options{
+		AllowedOrigins:   []string{os.Getenv("CORS") + ":" + os.Getenv("PORT")},
+		AllowCredentials: true,
+	})
 
-}
+	// Get sockets router
+	router := routes.Socket()
 
-func routes() {
-	http.HandleFunc("/echo", echo.Index)
+	// Make connections handler with cors stuffs
+	handler := c.Handler(router)
+
+	// Start Server
+	log.Fatal(http.ListenAndServe(":"+os.Getenv("PORT"), handler))
+
 }
