@@ -6,7 +6,8 @@ schema:
 - name: hex-game-server
   path: cmd/hex-game-server
   env:
-    URL: localhost:8080
+    PORT: 8080
+    CORS: "http://localhost"
   commands: 
     run: 
       status: true
