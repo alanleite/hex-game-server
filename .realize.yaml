@@ -4,16 +4,41 @@ settings:
     interval: 0s
 schema:
 - name: hex-game-server
-  path: .
-  commands: {}
+  path: cmd/hex-game-server
+  env:
+    URL: localhost:8080
+  commands: 
+    run: 
+      status: true
+      dir: cmd/hex-game-server
   watcher:
     extensions:
     - go
     paths:
-    - /
+    - ../../
     ignored_paths:
-    - .git
-    - .realize
-    - vendor
-    - manifest
-    - docs
+    - ../hex-game-client
+    - ../../.git
+    - ../../vendor
+    - ../../manifest
+    - ../../docs
+
+- name: hex-game-client
+  path: cmd/hex-game-client
+  env:
+    URL: localhost:8080
+  commands: 
+    run: 
+      status: true
+      dir: cmd/hex-game-client
+  watcher:
+    extensions:
+    - go
+    paths:
+    - ../../
+    ignored_paths:
+    - ../hex-game-server
+    - ../../.git
+    - ../../vendor
+    - ../../manifest
+    - ../../docs

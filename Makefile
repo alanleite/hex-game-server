@@ -1,7 +1,10 @@
-.PHONY: dev setup
+.PHONY: dev packages client echo
 
-setup:
+packages:
 	@dep ensure
 
 dev:
-	@realize start
+	@realize start --name="hex-game-server"
+
+echo:
+	@realize start --name="hex-game-client"

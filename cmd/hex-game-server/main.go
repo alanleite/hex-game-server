@@ -1,7 +1,7 @@
 package main
 
-import "fmt"
+import "github.com/alanleite/hex-game-server/internal/pkg/sockets"
 
 func main() {
-	fmt.Println("Hello World")
+	sockets.Start()
 }
